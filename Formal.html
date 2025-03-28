@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worklit - Platform Persiapan Karier Digital</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#002E64',
+                        secondary: '#FBCD18',
+                        accent: '#F1FF59',
+                        dark: '#000000',
+                        light: '#FFFFFF',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-light font-sans">
+
+    <!-- Halaman Beranda -->
+    <div id="home-page" class="min-h-screen">
+        <!-- Header / Navbar -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary">Worklit</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home-page" class="text-primary hover:text-secondary font-medium transition">Beranda</a>
+                    <a href="#services-page" class="text-primary hover:text-secondary font-medium transition">Layanan</a>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition">Tentang Kami</a>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition">Kontak</a>
+                </nav>
+                
+                <!-- Mobile Navigation Toggle -->
+                <button class="md:hidden text-primary focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+                
+                <!-- Auth Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="px-4 py-2 rounded-xl border border-primary text-primary hover:bg-primary hover:text-white transition">Masuk</a>
+                    <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-xl hover:bg-opacity-80 transition">Daftar</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu (Hidden by Default) -->
+            <div class="hidden md:hidden bg-white py-4 shadow-md">
+                <div class="container mx-auto px-4 flex flex-col space-y-4">
+                    <a href="#home-page" class="text-primary hover:text-secondary font-medium transition">Beranda</a>
+                    <a href="#services-page" class="text-primary hover:text-secondary font-medium transition">Layanan</a>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition">Tentang Kami</a>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition">Kontak</a>
+                    <div class="flex flex-col space-y-2 pt-2 border-t">
+                        <a href="#" class="px-4 py-2 rounded-xl border border-primary text-primary hover:bg-primary hover:text-white text-center transition">Masuk</a>
+                        <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-xl hover:bg-opacity-80 text-center transition">Daftar</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-primary to-primary/90 text-white">
+            <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-8">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Persiapkan Karier Digital Anda dengan Worklit</h2>
+                    <p class="text-lg mb-8">Platform persiapan karier terlengkap untuk memaksimalkan peluang Anda di dunia profesional digital.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#services-page" class="px-6 py-3 bg-secondary text-primary rounded-xl font-medium hover:bg-opacity-90 transition text-center">Jelajahi Layanan</a>
+                        <a href="#" class="px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-xl font-medium hover:bg-white/20 transition text-center">Konsultasi Gratis</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Profesional sedang bekerja" class="rounded-xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-primary">Mengapa Memilih Worklit?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="users" class="text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Mentor Berpengalaman</h3>
+                        <p class="text-gray-700">Dapatkan bimbingan dari profesional yang sudah berpengalaman di industri digital.</p>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="clipboard" class="text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Program Terstruktur</h3>
+                        <p class="text-gray-700">Kurikulum yang dirancang sistematis untuk meningkatkan keterampilan karier Anda.</p>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                            <i data-feather="trending-up" class="text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Hasil Terukur</h3>
+                        <p class="text-gray-700">Lihat kemajuan dan perkembangan Anda dengan metrik dan umpan balik yang jelas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Services -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-primary">Layanan Unggulan Kami</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Tingkatkan kesiapan karier Anda dengan layanan premium yang dirancang untuk membantu Anda menonjol di pasar kerja digital.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="CV Creation Workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Workshop Pembuatan CV</h3>
+                            <p class="text-gray-700 mb-4">Buat CV yang menarik perhatian rekruter dengan panduan dari pakar industri.</p>
+                            <a href="#" class="inline-flex items-center text-secondary font-medium hover:text-primary transition">
+                                Selengkapnya <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Mock Interview" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Simulasi Wawancara</h3>
+                            <p class="text-gray-700 mb-4">Latihan wawancara dengan pertanyaan yang disesuaikan dengan industri digital.</p>
+                            <a href="#" class="inline-flex items-center text-secondary font-medium hover:text-primary transition">
+                                Selengkapnya <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="LinkedIn Optimization" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-primary">Optimasi LinkedIn</h3>
+                            <p class="text-gray-700 mb-4">Tingkatkan profil LinkedIn Anda untuk menarik perhatian perekrut dan memperluas jaringan.</p>
+                            <a href="#" class="inline-flex items-center text-secondary font-medium hover:text-primary transition">
+                                Selengkapnya <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#services-page" class="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 inline-flex items-center transition">
+                        Lihat Semua Layanan <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-primary">Apa Kata Mereka?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="text-secondary">
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Berkat workshop CV dari Worklit, saya berhasil mendapatkan panggilan interview dari tiga perusahaan teknologi terkemuka dalam waktu sebulan!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-primary">Anisa Wijaya</h4>
+                                <p class="text-sm text-gray-500">UI/UX Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="text-secondary">
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Simulasi wawancara sangat membantu mengatasi kecemasan saya. Saya sekarang lebih percaya diri dan berhasil mendapatkan pekerjaan impian saya."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-primary">Budi Santoso</h4>
+                                <p class="text-sm text-gray-500">Digital Marketing Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="text-secondary">
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                                <i data-feather="star" class="inline"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Program optimasi LinkedIn meningkatkan profil saya secara drastis. Saya mendapatkan koneksi yang lebih berkualitas dan tawaran kerja yang relevan."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 mr-3 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-primary">Dewi Lestari</h4>
+                                <p class="text-sm text-gray-500">Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-accent">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary">Siap Meningkatkan Karier Digital Anda?</h2>
+                <p class="text-gray-700 mb-8 max-w-2xl mx-auto">Bergabunglah dengan ribuan profesional yang telah sukses memajukan karier mereka melalui program-program Worklit.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition">Mulai Sekarang</a>
+                    <a href="#" class="px-6 py-3 bg-white text-primary rounded-xl font-medium hover:bg-gray-100 transition">Jadwalkan Konsultasi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Worklit</h3>
+                        <p class="mb-4 text-gray-300">Platform persiapan karier digital terdepan untuk meningkatkan peluang profesional Anda.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-secondary transition"><i data-feather="facebook"></i></a>
+                            <a href="#" class="text-white hover:text-secondary transition"><i data-feather="twitter"></i></a>
+                            <a href="#" class="text-white hover:text-secondary transition"><i data-feather="instagram"></i></a>
+                            <a href="#" class="text-white hover:text-secondary transition"><i data-feather="linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Layanan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Workshop CV</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Simulasi Wawancara</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Optimasi LinkedIn</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Konsultasi Karier</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Perusahaan</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Tentang Kami</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Tim Kami</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Karier</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-secondary transition">Kontak</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Kontak</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i data-feather="map-pin" class="w-5 h-5 mr-2 mt-1 text-secondary"></i>
+                                <span class="text-gray-300">Jl. Digital No. 123, Jakarta Selatan</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="mail" class="w-5 h-5 mr-2 text-secondary"></i>
+                                <a href="mailto:info@worklit.com" class="text-gray-300 hover:text-secondary transition">info@worklit.com</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="phone" class="w-5 h-5 mr-2 text-secondary"></i>
+                                <a href="tel:+6281234567890" class="text-gray-300 hover:text-secondary transition">+62 812 3456 7890</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-white/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">&copy; 2025 Worklit. Hak Cipta Dilindungi.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-secondary text-sm transition">Kebijakan Privasi</a>
+                        <a href="#" class="text-gray-400 hover:text-secondary text-sm transition">Syarat & Ketentuan</a>
+                        <a href="#" class="text-gray-400 hover:text-secondary text-sm transition">Peta Situs</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Halaman Layanan -->
+    <div id="services-page" class="min-h-screen pt-20">
+        <!-- Header sama dengan halaman beranda -->
+        
+        <!-- Services Hero -->
+        <section class="bg-primary text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">Layanan Kami</h1>
+                <p class="text-xl max-w-3xl mx-auto">Pilih layanan yang sesuai dengan kebutuhan pengembangan karier digital Anda</p>
+            </div>
+        </section>
+        
+        <!-- Services Categories -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <button class="px-6 py-2 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition">Semua</button>
+                    <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition">CV & Resume</button>
+                    <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition">Wawancara</button>
+                    <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition">LinkedIn</button>
+                    <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition">Konsultasi</button>
+                </div>
+                
+                <!-- Service Items -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="CV Basic" class="w-full h-full object-cover"> 
+                            <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-4 py-2 rounded-bl-lg">CV Basic</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Pembuatan CV dari 0</h3>
+                            <p class="text-gray-600 mb-4">Layanan pembuatan CV profesional dari nol untuk fresh graduate dan pencari kerja pemula</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary">Rp 150.000</span>
+                                <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-lg hover:bg-opacity-80 transition">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1616587894289-86480e533129?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJlc3VtZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="CV Review" class="w-full h-full object-cover">
+                            <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-4 py-2 rounded-bl-lg">CV Review</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Review CV Profesional</h3>
+                            <p class="text-gray-600 mb-4">Dapatkan masukan profesional untuk meningkatkan CV yang sudah Anda miliki</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary">Rp 100.000</span>
+                                <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-lg hover:bg-opacity-80 transition">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGludGVydmlld3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Mock Interview" class="w-full h-full object-cover">
+                            <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-4 py-2 rounded-bl-lg">Interview</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Mock Interview</h3>
+                            <p class="text-gray-600 mb-4">Simulasi wawancara kerja dengan feedback langsung dari profesional HR</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary">Rp 200.000</span>
+                                <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-lg hover:bg-opacity-80 transition">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGlua2VkaW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="LinkedIn Optimization" class="w-full h-full object-cover">
+                            <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-4 py-2 rounded-bl-lg">LinkedIn</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Optimasi Profil LinkedIn</h3>
+                            <p class="text-gray-600 mb-4">Maksimalkan profil LinkedIn untuk menarik perhatian recruiter dan jaringan profesional</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary">Rp 175.000</span>
+                                <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-lg hover:bg-opacity-80 transition">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 5 -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyZWVyJTIwY29hY2hpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Career Consultation" class="w-full h-full object-cover">
+                            <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-4 py-2 rounded-bl-lg">Konsultasi</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Konsultasi Karier</h3>
+                            <p class="text-gray-600 mb-4">Bimbingan karier one-on-one dengan konsultan berpengalaman</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary">Rp 250.000</span>
+                                <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-lg hover:bg-opacity-80 transition">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 6 -->
+                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                        <div class="h-48 bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvcmtzaG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Workshop" class="w-full h-full object-cover">
+                            <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-4 py-2 rounded-bl-lg">Workshop</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary mb-2">Workshop Persiapan Karier</h3>
+                            <p class="text-gray-600 mb-4">Sesi grup interaktif untuk meningkatkan keterampilan dan persiapan karier</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary">Rp 125.000</span>
+                                <a href="#" class="px-4 py-2 bg-secondary text-primary rounded-lg hover:bg-opacity-80 transition">Pesan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="mt-10 flex justify-center">
+                    <nav class="flex items-center space-x-2">
+                        <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 transition">Prev</a>
+                        <a href="#" class="px-3 py-1 rounded-md bg-primary text-white hover:bg-primary/90 transition">1</a>
+                        <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 transition">2</a>
+                        <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 transition">3</a>
+                        <a href="#" class="px-3 py-1 rounded-md bg-gray-100 text-gray-700 hover:bg-gray-200 transition">Next</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Apa Kata Mereka</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Testimoni" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Anisa Wijaya</h4>
+                                <p class="text-sm text-gray-500">Fresh Graduate</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"CV saya yang awalnya biasa aja jadi standout banget setelah direvisi sama Worklit. Gak nyangka kalau ternyata CV bisa sehebat ini!"</p>
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/men/47.jpg" alt="Testimoni" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Budi Santoso</h4>
+                                <p class="text-sm text-gray-500">Mahasiswa Semester 7</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Mock interview-nya bener-bener membantu banget! Sekarang saya jadi lebih pede menghadapi interview dan berhasil dapat posisi magang impian."</p>
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="stroke-current"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden mr-4">
+                                <img src="https://randomuser.me/api/portraits/women/58.jpg" alt="Testimoni" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Dewi Pratiwi</h4>
+                                <p class="text-sm text-gray-500">Career Switcher</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Konsultasi karier di Worklit bener-bener ngebantu saya dalam transisi karier. Dari awalnya bingung sampai punya roadmap yang jelas."</p>
+                        <div class="flex text-yellow-400">
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                            <i data-feather="star" class="fill-current"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-16 bg-primary text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4">Siap Untuk Tingkatkan Karier Digitalmu?</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Jangan lewatkan kesempatan untuk menjadi kandidat yang menonjol di dunia kerja digital yang kompetitif</p>
+                <a href="#" class="inline-block px-8 py-3 bg-secondary text-primary rounded-xl font-bold hover:bg-opacity-90 transition">Mulai Sekarang</a>
+            </div>
+        </section>
+        
+        <!-- Footer sama dengan halaman beranda -->
+    </div>
+    
+    <!-- Halaman Booking -->
+    <div id="booking-page" class="min-h-screen pt-20">
+        <!-- Header sama dengan halaman beranda -->
+        
+        <!-- Booking Form -->
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-3xl font-bold text-primary mb-8 text-center">Booking Layanan</h1>
+                    
+                    <!-- Progress Steps -->
+                    <div class="flex justify-between items-center mb-12 relative">
+                        <div class="absolute left-0 right-0 top-1/2 h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+                        
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold mb-2">1</div>
+                            <span class="text-sm font-medium text-primary">Pilih Layanan</span>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold mb-2">2</div>
+                            <span class="text-sm font-medium text-gray-500">Pilih Waktu</span>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold mb-2">3</div>
+                            <span class="text-sm font-medium text-gray-500">Detail Pesanan</span>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center font-bold mb-2">4</div>
+                            <span class="text-sm font-medium text-gray-500">Pembayaran</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Service Selection -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                        <h2 class="text-xl font-bold text-primary mb-6">Pilih Layanan</h2>
+                        
+                        <div class="space-y-4">
+                            <!-- Service Option 1 -->
+                            <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition">
+                                <div class="flex items-start">
+                                    <input type="radio" name="service" id="service1" class="mt-1 mr-3">
+                                    <div class="flex-1">
+                                        <label for="service1" class="block font-bold text-primary cursor-pointer">Pembuatan CV dari 0</label>
+                                        <p class="text-gray-600 text-sm mt-1">Layanan pembuatan CV profesional dari nol untuk fresh graduate dan pencari kerja pemula</p>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <span class="text-primary font-bold">Rp 150.000</span>
+                                            <span class="text-sm text-gray-500">Durasi: 2-3 hari kerja</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Option 2 -->
+                            <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition">
+                                <div class="flex items-start">
+                                    <input type="radio" name="service" id="service2" class="mt-1 mr-3">
+                                    <div class="flex-1">
+                                        <label for="service2" class="block font-bold text-primary cursor-pointer">Review CV Profesional</label>
+                                        <p class="text-gray-600 text-sm mt-1">Dapatkan masukan profesional untuk meningkatkan CV yang sudah Anda miliki</p>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <span class="text-primary font-bold">Rp 100.000</span>
+                                            <span class="text-sm text-gray-500">Durasi: 1-2 hari kerja</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Option 3 -->
+                            <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition">
+                                <div class="flex items-start">
+                                    <input type="radio" name="service" id="service3" class="mt-1 mr-3">
+                                    <div class="flex-1">
+                                        <label for="service3" class="block font-bold text-primary cursor-pointer">Mock Interview</label>
+                                        <p class="text-gray-600 text-sm mt-1">Simulasi wawancara kerja dengan feedback langsung dari profesional HR</p>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <span class="text-primary font-bold">Rp 200.000</span>
+                                            <span class="text-sm text-gray-500">Durasi: 60 menit</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex justify-end">
+                            <button class="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition">Lanjutkan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer sama dengan halaman beranda -->
+    </div>
+    
+    <!-- Initializes Feather icons -->
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

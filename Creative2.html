@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worklit - Elevate Your Career Path</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        /* Custom Styles */
+        :root {
+            --primary: #002E64;
+            --primary-light: #1a508c;
+            --secondary: #FCCE19;
+            --secondary-light: #ffe249;
+            --accent: #f25c54;
+            --text-dark: #111827;
+            --text-medium: #374151;
+            --text-light: #f9fafb;
+            --bg-light: #ffffff;
+            --bg-off: #f3f4f6;
+            --bg-accent: #e9f7fe;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .serif-title {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* Header styling */
+        .header-wrapper {
+            background-color: var(--bg-light);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-overlay {
+            background-color: var(--primary);
+        }
+
+        /* Text styling */
+        .hero-text {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        /* Card styling */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+        }
+
+        .bg-gradient-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #f28482 100%);
+        }
+
+        /* Animation */
+        .scroll-indicator {
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Custom Cursor */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Editorial Grid Layout */
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,46,100,0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(252,206,25,0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* Accent patterns */
+        .dot-pattern {
+            background-image: radial-gradient(var(--secondary) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .wave-pattern {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-pattern::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            bottom: -200%;
+            left: -50%;
+            border-radius: 100%;
+            background-color: rgba(252,206,25,0.1);
+        }
+
+        /* Feature icon */
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            background-color: var(--bg-accent);
+            color: var(--primary);
+        }
+
+        /* Testimonial */
+        .testimonial-card {
+            border-radius: 12px;
+            background-color: var(--bg-light);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .footer a {
+            color: var(--text-light);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer input {
+            background-color: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+            color: var(--text-light);
+        }
+
+        .footer input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer button {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header class="header-wrapper fixed w-full top-0 z-50 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-bold serif-title text-primary">
+                        Work<span class="text-secondary">lit</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link font-medium">Home</a>
+                    <a href="#services" class="nav-link font-medium">Services</a>
+                    <a href="#testimonials" class="nav-link font-medium">Testimonials</a>
+                    <a href="#contact" class="nav-link font-medium">Contact</a>
+                </nav>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#booking" class="btn-primary px-6 py-2 rounded-lg font-medium">
+                        Book Now
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-primary focus:outline-none">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="menu" class="nav-overlay absolute w-full hidden md:hidden">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex justify-end mb-8">
+                    <button id="menu-close" class="text-white focus:outline-none">
+                        <i data-feather="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6 text-center">
+                    <a href="#home" class="text-white text-xl font-medium">Home</a>
+                    <a href="#services" class="text-white text-xl font-medium">Services</a>
+                    <a href="#testimonials" class="text-white text-xl font-medium">Testimonials</a>
+                    <a href="#contact" class="text-white text-xl font-medium">Contact</a>
+                    <a href="#booking" class="btn-secondary mt-4 px-6 py-2 rounded-lg font-medium inline-block">Book Now</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 md:py-32 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-0 w-64 h-64 dot-pattern opacity-10 rounded-full transform translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 wave-pattern"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="editorial-grid">
+                <div class="col-span-12 md:col-span-7 lg:col-span-6 flex flex-col justify-center" data-aos="fade-right">
+                    <h1 class="hero-text serif-title mb-6 text-gradient">
+                        Elevate Your Career Path
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-text-medium max-w-xl">
+                        Expert interview training, personalized CV review, and career development services to help you stand out in today's competitive job market.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#booking" class="btn-primary px-8 py-3 rounded-lg font-medium">
+                            <i class="fas fa-calendar-check mr-2"></i> Book a Session
+                        </a>
+                        <a href="#services" class="btn-outline px-8 py-3 rounded-lg font-medium">
+                            Explore Services
+                        </a>
+                    </div>
+                    
+                    <!-- Scroll Indicator -->
+                    <div class="hidden md:flex justify-center mt-16">
+                        <a href="#services" class="scroll-indicator text-primary">
+                            <i data-feather="chevron-down" class="w-8 h-8"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-span-12 md:col-span-5 lg:col-span-6 mt-12 md:mt-0 relative" data-aos="fade-left">
+                    <!-- Lottie Animation Container -->
+                    <div id="hero-animation" class="w-full h-96 md:h-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-bg-off">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-title serif-title mb-4">Our Services</h2>
+                <p class="text-text-medium max-w-2xl mx-auto">
+                    Comprehensive career development services customized to help you succeed in your professional journey.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- CV Review Card -->
+                <div class="bg-white rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">CV Review</h3>
+                    <p class="text-text-medium mb-6">
+                        Expert analysis and improvement of your resume to highlight your strengths and make your application stand out.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-primary">$89</span>
+                        <a href="#booking" class="btn-outline rounded-lg px-4 py-2 text-sm">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Interview Practice Card -->
+                <div class="bg-white rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-icon bg-gradient">
+                        <i class="fas fa-comments text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">1-on-1 Interview Practice</h3>
+                    <p class="text-text-medium mb-6">
+                        Personalized mock interviews with detailed feedback to boost your confidence and performance.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-primary">$149</span>
+                        <a href="#booking" class="btn-outline rounded-lg px-4 py-2 text-sm">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Career Success Package Card -->
+                <div class="bg-white rounded-2xl p-8 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon bg-gradient-accent">
+                        <i class="fas fa-award text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Career Success Package</h3>
+                    <p class="text-text-medium mb-6">
+                        Comprehensive package including CV review, interview practice, and personalized career advice.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-primary">$199</span>
+                        <a href="#booking" class="btn-primary rounded-lg px-4 py-2 text-sm">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="editorial-grid">
+                <div class="col-span-12 md:col-span-5 relative" data-aos="fade-right">
+                    <!-- Feature Image or Animation -->
+                    <div id="features-animation" class="w-full h-96"></div>
+                </div>
+                
+                <div class="col-span-12 md:col-span-7 md:pl-12 flex flex-col justify-center" data-aos="fade-left">
+                    <h2 class="section-title serif-title mb-8">Why Choose Worklit?</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-4">
+                                <div class="bg-bg-accent w-12 h-12 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-user-tie text-xl text-primary"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Expert Trainers</h3>
+                                <p class="text-text-medium">
+                                    Work with industry professionals who provide actionable insights and personalized feedback.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-4">
+                                <div class="bg-bg-accent w-12 h-12 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-calendar-alt text-xl text-primary"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Flexible Scheduling</h3>
+                                <p class="text-text-medium">
+                                    Book sessions at your convenience with our easy-to-use online scheduling system.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-4">
+                                <div class="bg-bg-accent w-12 h-12 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-chart-line text-xl text-primary"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Measurable Results</h3>
+                                <p class="text-text-medium">
+                                    Our clients report an average 70% increase in interview confidence and 40% higher callback rates.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-bg-off">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="section-title serif-title mb-4">Client Success Stories</h2>
+                <p class="text-text-medium max-w-2xl mx-auto">
+                    Hear from professionals who transformed their career prospects with our services.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="Sarah Johnson" class="w-14 h-14 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-sm text-text-medium">Marketing Manager</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-text-medium">
+                        "After working with Worklit's interview coaches, I felt much more confident. I landed my dream job at a top tech company within a month!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-14 h-14 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-sm text-text-medium">Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-text-medium">
+                        "The CV review service completely transformed my resume. I started getting calls for interviews within days of updating it!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Anya Patel" class="w-14 h-14 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Anya Patel</h4>
+                            <p class="text-sm text-text-medium">Financial Analyst</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-text-medium">
+                        "The Career Success Package was worth every penny. The personalized advice helped me negotiate a 15% higher salary than I initially expected."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA Section -->
+    <section id="booking" class="py-24 relative overflow-hidden">
+        <!-- Decorative Background -->
+        <div class="absolute inset-0 bg-primary opacity-95 z-0"></div>
+        <div class="absolute top-0 right-0 dot-pattern opacity-10 w-full h-full"></div>
+        
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="section-title serif-title mb-6 text-white">Ready to Accelerate Your Career?</h2>
+                <p class="text-xl text-white opacity-90 mb-10">
+                    Book your session today and take the first step towards achieving your professional goals.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#" class="btn-secondary px-8 py-4 rounded-lg font-medium text-lg">
+                        <i class="fas fa-calendar-check mr-2"></i> Book Now
+                    </a>
+                    <a href="#" class="border-2 border-white text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-white hover:text-primary transition-colors">
+                        <i class="fas fa-envelope mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="col-span-12 md:col-span-4">
+                    <a href="#" class="text-3xl font-bold serif-title text-white mb-6 inline-block">
+                        Work<span class="text-secondary">lit</span>
+                    </a>
+                    <p class="text-white opacity-80 mb-6">
+                        Elevating careers through professional development and interview training.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-secondary transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-secondary transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-secondary transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-span-12 md:col-span-2">
+                    <h3 class="font-medium text-white mb-4">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-span-12 md:col-span-2">
+                    <h3 class="font-medium text-white mb-4">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#">CV Review</a></li>
+                        <li><a href="#">Interview Practice</a></li>
+                        <li><a href="#">Career Coaching</a></li>
+                        <li><a href="#">Skills Assessment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-span-12 md:col-span-4">
+                    <h3 class="font-medium text-white mb-4">Stay Updated</h3>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary w-full">
+                        <button type="submit" class="btn-secondary px-4 py-3 rounded-lg font-medium">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-sm opacity-70 mt-3">
+                        Subscribe to our newsletter for career tips, event invites, and special offers.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-white opacity-70 text-sm">
+                    &copy; 2025 Worklit. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="text-white opacity-70 hover:opacity-100 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-white opacity-70 hover:opacity-100 text-sm">Terms of Service</a>
+                    <a href="#" class="text-white opacity-70 hover:opacity-100 text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobileNav" class="fixed inset-0 bg-primary z-50 flex flex-col justify-center items-center transform translate-x-full transition-transform duration-300 ease-in-out">
+        <button id="closeNavBtn" class="absolute right-5 top-5 text-white text-3xl">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="text-center">
+            <ul class="space-y-6">
+                <li><a href="#" class="text-white text-2xl font-medium hover:text-secondary transition-colors">Beranda</a></li>
+                <li><a href="#" class="text-white text-2xl font-medium hover:text-secondary transition-colors">Layanan</a></li>
+                <li><a href="#" class="text-white text-2xl font-medium hover:text-secondary transition-colors">Tentang Kami</a></li>
+                <li><a href="#" class="text-white text-2xl font-medium hover:text-secondary transition-colors">Blog</a></li>
+                <li><a href="#" class="text-white text-2xl font-medium hover:text-secondary transition-colors">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="mt-12">
+            <a href="#" class="btn-secondary px-8 py-3 rounded-lg font-medium text-lg">Booking</a>
+        </div>
+        <div class="mt-12 flex space-x-4">
+            <a href="#" class="text-white hover:text-secondary transition-colors">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-secondary transition-colors">
+                <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-secondary transition-colors">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize feather icons
+        feather.replace();
+    
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+    
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero section animations
+        gsap.from('.hero-text', {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.hero-description', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 0.3,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.hero-btn', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.6,
+            ease: 'power3.out'
+        });
+    
+        // Services section card animations
+        gsap.from('.service-card', {
+            scrollTrigger: {
+                trigger: '.services-section',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: 'power2.out'
+        });
+    
+        // Mobile navigation
+        const menuBtn = document.getElementById('menu-toggle');
+        const closeNavBtn = document.getElementById('closeNavBtn');
+        const mobileNav = document.getElementById('mobileNav');
+    
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        });
+    
+        closeNavBtn.addEventListener('click', () => {
+            mobileNav.classList.add('translate-x-full');
+            document.body.style.overflow = 'auto';
+        });
+    
+        // Lottie animation for the hero section
+        const heroAnimation = document.getElementById('heroAnimation');
+        if (heroAnimation) {
+            lottie.loadAnimation({
+                container: heroAnimation,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'https://assets10.lottiefiles.com/packages/lf20_rwq6ciql.json' // Career/interview animation
+            });
+        }
+    
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-item');
+        const indicators = document.querySelectorAll('.testimonial-indicator');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((item, i) => {
+                item.classList.toggle('hidden', i !== index);
+                item.classList.toggle('flex', i === index);
+            });
+            
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('bg-secondary', i === index);
+                indicator.classList.toggle('bg-gray-300', i !== index);
+            });
+            
+            currentTestimonial = index;
+        }
+        
+        // Initialize testimonial slider
+        showTestimonial(0);
+        
+        // Setup testimonial navigation
+/*        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            let newIndex = currentTestimonial - 1;
+            if (newIndex < 0) newIndex = testimonials.length - 1;
+            showTestimonial(newIndex);
+        });
+        
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            let newIndex = currentTestimonial + 1;
+            if (newIndex >= testimonials.length) newIndex = 0;
+            showTestimonial(newIndex);
+        });
+*/      
+        // Setup indicator clicks
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials every 5 seconds
+        setInterval(() => {
+            let newIndex = currentTestimonial + 1;
+            if (newIndex >= testimonials.length) newIndex = 0;
+            showTestimonial(newIndex);
+        }, 5000);
+    </script>
+</body>
+</html>    
